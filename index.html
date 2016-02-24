@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Philippe Roy | Web Developer</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="/favicon/favicon.ico">
+	<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel='stylesheet' href="//fonts.googleapis.com/css?family=Raleway:400,200">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css"/>
+	<link rel="stylesheet" href="/stylesheets/styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-scroll/0.7.3/angular-scroll.min.js"></script>
+	<script src="/js/src/contollers.js"></script>
+	<base href="/">
+</head>
+<body class="home" ng-app="portfolioWebsiteApp" ng-cloak ng-controller="TheBody">
+
+	<!-- nav -->
+	<div ng-include src="'partials/nav.html'"></div>
+
+	<!-- Section: Intro -->
+	<div ng-include src="'partials/intro.html'"></div>
+
+	<!-- Section: Myself -->
+	<div ng-include src="'partials/myself.html'"></div>
+
+	<!-- Section: Featured Portfolio-->
+	<div id="portfolio" class="portfolio" ng-controller="FeatureSliderCtrl">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-8 col-xs-offset-2">
+					<h2>Portfolio</h2>
+					<hr>
+				</div>
+			</div>
+		</div>
+		<div ng-include src="'partials/featured-portfolio.html'" onload="initPortfolioSlider()" ></div>
+		<div class="container moreThings">
+			<div class="row">
+				<div class="col-xs-12">
+					<a href="/playground">
+						<button class="red gradient" >
+							More Stuff
+						</button>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Section: Projects -->
+	<div id="projects" ng-controller="FeatureSliderCtrl">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-8 col-xs-offset-2">
+					<h2>Projects</h2>
+					<hr>
+				</div>
+			</div>
+		</div>
+		<div ng-include src="'partials/featured-projects.html'" onload="initProjectsSlider()"></div>
+		<div class="container moreThings">
+      <div class="row">
+        <div class="col-xs-12">
+          <a href="/playground">
+            <button class="red gradient">
+              The Playground
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+	</div>
+
+	<!-- Section: Toolbelt -->
+	<div ng-include src="'partials/toolbelt.html'"  ></div>
+
+	<!-- Section: Contact -->
+	<div ng-include src="'partials/contact.html'"  ></div>
+
+	<!-- Section: Sitemap -->
+	<div ng-include="'partials/sitemap.html'"></div>
+
+	<!-- Section: Scripts -->
+	<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+	<script src="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+
+	<div ng-include="'partials/empty.html'" onload="pageReady()"></div>
+
+</body>
+</html>

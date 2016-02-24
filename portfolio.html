@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Philippe Roy | Web Developer</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="/favicon/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel='stylesheet' href="//fonts.googleapis.com/css?family=Raleway:400,200">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css"/>
+  <link rel="stylesheet" href="/stylesheets/styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-scroll/0.7.3/angular-scroll.min.js"></script>
+	<script src="/js/src/contollers.js"></script>
+	<base href="/">
+</head>
+<body class="portfolio" ng-app="portfolioWebsiteApp">
+	<!-- nav -->
+	<div ng-include src="'partials/nav.html'"></div>
+
+	<!-- Title -->
+	<div class="background red">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <h1>Portfolio</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section: Featured -->
+	<div ng-controller="FeatureSliderCtrl">
+		<div ng-include src="'partials/featured-portfolio.html'" onload="initPortfolioSlider()" ></div>
+	</div>
+
+	<!-- Section: Portfolio Itemss -->
+  <div id="portfolio-list" class="container-fluid background grey section" >
+    <div class="row" ng-controller="PortfolioCtrl">
+      <div class="col-md-4 portfolio-list-item" ng-repeat="site in sites">
+        <h3>{{site.name}}</h3>
+        <img class="img-responsive" ng-src="images/sites/{{site.name}}/{{site.images.devices}}" alt="...">
+      </div>
+    </div>
+  </div>
+
+	<div ng-include src="'partials/sitemap.html'"></div>
+
+	<!-- Section: Scripts -->
+	<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+	<script src="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js"></script>
+	<script src="/js/src/pr_scripts.js"></script>
+</body>
+</html>

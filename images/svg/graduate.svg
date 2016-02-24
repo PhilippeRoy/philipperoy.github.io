@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="19.966px" height="37.073px" viewBox="5.271 -5.066 19.966 37.073" enable-background="new 5.271 -5.066 19.966 37.073"
+	 xml:space="preserve">
+<g id="Layer_1">
+	<circle fill="#999999" cx="16" cy="5.819" r="5.844"/>
+	
+		<rect x="14.537" y="12.463" transform="matrix(0.7069 0.7074 -0.7074 0.7069 14.5393 -7.2353)" fill="#FFCC66" width="2.923" height="2.922"/>
+	<polygon fill="#FFCC66" points="16,23.785 13.935,17.239 16,15.172 18.065,17.239 	"/>
+	<g>
+		<path d="M23.897,13.823l-2.936,0.001C19.983,14.562,16,20.335,16,20.335c-0.529-0.323-3.78-5.773-4.76-6.511l-2.738-0.001
+			c0,0-1.339,0.6-1.339,1.339V30.67c0,0.738,0.6,1.337,1.339,1.337h15.396c0.74,0,1.34-0.599,1.34-1.337V15.163
+			C25.237,14.423,24.638,13.823,23.897,13.823z"/>
+	</g>
+	<path fill="none" d="M11.083,2.087c0.154,0.347,0.178,0.731,0.25,1.083"/>
+	<path fill="none" d="M15.167-0.163c0.066,0.315,0.129,0.611,0.167,0.917"/>
+</g>
+<g id="Layer_2">
+	<g>
+		<path d="M12.854,1.221c-0.25,0.107-0.255,0.339-0.808,0.339L5.842,3.601c-0.552,0-0.571,0.021-0.571-0.532l4.542-6.042
+			c0,0,0.634-0.358,1.021-0.333l5.562-1.754c0,0,0.75-0.094,0.75,0.458L12.854,1.221z"/>
+		<g>
+			<path fill="none" stroke="#FFCC66" stroke-miterlimit="10" d="M8.769,6.058c-2.24-2.314,0.694-7.17,2.042-7.17"/>
+			<circle fill="none" stroke="#FFCC66" stroke-miterlimit="10" cx="8.893" cy="6.058" r="0.521"/>
+			<path fill="none" stroke="#FFCC66" stroke-miterlimit="10" d="M8.893,6.058c1.35,1.036-0.136,1.786,0.198,3.182"/>
+		</g>
+		<circle fill="#FFCC66" cx="10.812" cy="-1.112" r="0.521"/>
+		<path fill="none" stroke="#FFCC66" stroke-miterlimit="10" d="M9.382,7.649c0,0.419,0.434,0.514,0.434,1.277"/>
+		<path fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M9.815,3.805c0.807-0.581,3.169-0.489,4.04-1.502
+			c0.733-0.853,1.749-2.457,2.481-3.036"/>
+	</g>
+</g>
+</svg>
