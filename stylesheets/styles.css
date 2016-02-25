@@ -53,7 +53,7 @@ button:hover { /* border: 1px solid #C23B22; */ }
 .red button:hover { background-color: rgba(255,  255,  255,  0.25); }
 button.red.gradient { color: #FFFFFF; position: relative; z-index: 1; top: 0;  -webkit-transition: top 0.5s; transition: top 0.5s; }
 button.red.gradient:hover { top: -10px; }
-button.red.gradient:before{ background: linear-gradient(170deg,  #C23B22 0%,#FF6961 100%); /* W3C */ content: ''; display: block; height: 100%; width: 100%; position: absolute; top: 0; left: 0; opacity: 0; z-index: -100; -webkit-transition: opacity 0.45s ease-in-out; transition: opacity 0.45s ease-in-out;}
+button.red.gradient:before{ background: linear-gradient(135deg,  #C23B22 0%, #FF6961 70%); /* W3C */ content: ''; display: block; height: 100%; width: 100%; position: absolute; top: 0; left: 0; opacity: 0; z-index: -100; -webkit-transition: opacity 0.45s ease-in-out; transition: opacity 0.45s ease-in-out;}
 button.red.gradient:hover:before { opacity: 1;}
 
 /* Backgrounds */
@@ -204,7 +204,7 @@ nav .navbar-default { position: fixed !important; }
 #intro .row.headline,
 #intro .secondary-nav { position: relative; top: 30%; transform: translateY(-50%);}
 #intro .row.bottom a { display: inline-block; }
-#intro #intro-menu button { position: relative; top: 0; -webkit-transitions: top 0.5s; transition: top 0.5s; }
+#intro #intro-menu button { position: relative; top: 0; opacity: 1; -webkit-transitions: top 0.5s; transition: top 0.5s; }
 #intro #intro-menu button:hover { position: relative; top: -10px; background: transparent; }
 
 
@@ -283,6 +283,12 @@ nav .navbar-default { position: fixed !important; }
 
 /* 404 */
 #error a { color: #FF6961; }
+
+/* Showtime */
+#portfolio { visibility: hidden; }
+#projects { visibility: hidden; }
+.showtime #portfolio { visibility: visible; }
+.showtime #projects { visibility: visible; }
 
 /* Animations */
 .slideDown { -webkit-animation: slideDown 1s; animation: slideDown 1s; opacity: 1 !important; }

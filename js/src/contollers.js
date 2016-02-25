@@ -69,26 +69,43 @@ portfolioWebsiteApp.controller('TheBody', function($scope, $document) {
 
   $scope.pageReady = function() {
 
+    document.body.className = document.body.className + ' '+ 'showtime';
+
+
     if(location.hash.length){
       var someElement = angular.element(document.querySelector(location.hash));
-      $document.scrollToElement(someElement, document.querySelector('.navbar').clientHeight, 1000);
+      $(window).on('load', function(){
+        $document.scrollToElement(someElement, document.querySelector('.navbar').clientHeight, 1000);
+      })
     }
 
     // init controller
     var controller = new ScrollMagic.Controller();
 
     if(document.querySelectorAll('#intro').length){
-      var prevProgress = null;
 
-      new ScrollMagic.Scene({triggerElement: "#myself", triggerHook: 1, duration: '100%', offset: '2px'  })
-          .addIndicators({name: 'intro Arrow'})
-          .addTo(controller) // assign the scene to the controller
-          .on("progress", function (event) {
-            if(event.state === 'DURING' && event.scrollDirection === 'FORWARD'){document.querySelector('.down-arrow').className = 'down-arrow forward';}
-            else if(event.state === 'DURING' && event.scrollDirection === 'REVERSE'){document.querySelector('.down-arrow').className = 'down-arrow reverse';}
-          }).on("enter leave", function (e) {
-            document.querySelector('.down-arrow').className = 'down-arrow';
-					})
+      var tl = new TimelineLite();
+      var b1 = document.querySelector('#intro-menu li:nth-of-type(1) button'),
+          b2 = document.querySelector('#intro-menu li:nth-of-type(2) button'),
+          b3 = document.querySelector('#intro-menu li:nth-of-type(3) button'),
+          da = document.querySelector('body button.down-arrow');
+
+          tl.delay(1);
+          tl.staggerFrom([b2,b1,b3], 0.75, {y:20, opacity: 0}, 0.5);
+          tl.from(da, 0.5, {width: 0})
+
+      if(document.querySelectorAll('#myself').length){
+
+        // Down Arrow animation
+        new ScrollMagic.Scene({triggerElement: "#myself", triggerHook: 1, duration: '100%', offset: '2px'  })
+            // .addIndicators({name: 'intro Arrow'})
+            .addTo(controller) // assign the scene to the controller
+            .on("progress", function (event) {
+              if(event.state === 'DURING' && event.scrollDirection === 'FORWARD'){document.querySelector('.down-arrow').className = 'down-arrow forward';}
+              else if(event.state === 'DURING' && event.scrollDirection === 'REVERSE'){document.querySelector('.down-arrow').className = 'down-arrow reverse';}
+            })
+            .on("enter leave", function (e) { document.querySelector('.down-arrow').className = 'down-arrow'; })
+      }
 
     }
 
