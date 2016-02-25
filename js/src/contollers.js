@@ -76,36 +76,82 @@ portfolioWebsiteApp.controller('TheBody', function($scope, $document) {
 
     // init controller
     var controller = new ScrollMagic.Controller();
-    var navheight = function(){return document.querySelector('.navbar').clientHeight / window.innerHeight; };
 
-    $(window).on('resize', function(){
-      sceneNavbar.triggerHook(navheight());
-    })
+    if(document.querySelectorAll('#intro').length){
+      var prevProgress = null;
 
-    // create a scene
-    var sceneNavbar = new ScrollMagic.Scene({triggerElement: "#myself", triggerHook: navheight(), offset: -50 })
-        .addIndicators({name: 'Scene Navbar'})
-        .setTween(TweenMax.fromTo('.navbar', 1,  {opacity: 0 }, {opacity: 1}))
-        .addTo(controller); // assign the scene to the controller
+      new ScrollMagic.Scene({triggerElement: "#myself", triggerHook: 1, duration: '100%', offset: '2px'  })
+          .addIndicators({name: 'intro Arrow'})
+          .addTo(controller) // assign the scene to the controller
+          .on("progress", function (event) {
+            if(event.state === 'DURING' && event.scrollDirection === 'FORWARD'){document.querySelector('.down-arrow').className = 'down-arrow forward';}
+            else if(event.state === 'DURING' && event.scrollDirection === 'REVERSE'){document.querySelector('.down-arrow').className = 'down-arrow reverse';}
+          }).on("enter leave", function (e) {
+            document.querySelector('.down-arrow').className = 'down-arrow';
+					})
+
+    }
 
     if(document.querySelectorAll('#myself').length){
+
+      var navheight = function(){return document.querySelector('.navbar').clientHeight / window.innerHeight; };
+
+      $(window).on('resize', function(){
+        sceneNavbar.triggerHook(navheight());
+      })
+
+      // create a scene
+      var sceneNavbar = new ScrollMagic.Scene({triggerElement: "#myself", triggerHook: navheight(), offset: -50 })
+          // .addIndicators({name: 'Scene Navbar'})
+          .setTween(TweenMax.fromTo('.navbar', 1,  {opacity: 0 }, {opacity: 1}))
+          .addTo(controller); // assign the scene to the controller
 
       var circleHeight = document.querySelector('.circle').offsetHeight
 
       new ScrollMagic.Scene({triggerElement: "#profile", triggerHook: 0.8 })
-          .addIndicators({name: 'Scene Skills'})
+          // .addIndicators({name: 'Scene Skills'})
           .setTween(TweenMax.staggerTo('.circle', 1,  {top: 0 }, 0.3))
           .addTo(controller); // assign the scene to the controller
     }
 
+
+    // Add this year
+    $(function(){
+      $('.thisYear').html(new Date().getFullYear());
+
+      var asciiArt = '';
+      asciiArt += '          _____                    _____          \n';
+      asciiArt += '         /\\    \\                  /\\    \\         \n';
+      asciiArt += '        /::\\    \\                /::\\    \\        \n';
+      asciiArt += '       /::::\\    \\              /::::\\    \\       \n';
+      asciiArt += '      /::::::\\    \\            /::::::\\    \\      \n';
+      asciiArt += '     /:::/\\:::\\    \\          /:::/\\:::\\    \\     \n';
+      asciiArt += '    /:::/__\\:::\\    \\        /:::/__\\:::\\    \\    \n';
+      asciiArt += '   /::::\\   \\:::\\    \\      /::::\\   \\:::\\    \\   \n';
+      asciiArt += '  /::::::\\   \\:::\\    \\    /::::::\\   \\:::\\    \\  \n';
+      asciiArt += ' /:::/\\:::\\   \\:::\\____\\  /:::/\\:::\\   \\:::\\____\\ \n';
+      asciiArt += '/:::/  \\:::\\   \\:::|    |/:::/  \\:::\\   \\:::|    |\n';
+      asciiArt += '\\::/    \\:::\\  /:::|____|\\::/   |::::\\  /:::|____|\n';
+      asciiArt += ' \\/_____/\\:::\\/:::/    /  \\/____|:::::\\/:::/    / \n';
+      asciiArt += '          \\::::::/    /         |:::::::::/    /  \n';
+      asciiArt += '           \\::::/    /          |::|\\::::/    /   \n';
+      asciiArt += '            \\::/____/           |::| \\::/____/    \n';
+      asciiArt += '             ~~                 |::|  ~|          \n';
+      asciiArt += '                                |::|   |          \n';
+      asciiArt += '                                \\::|   |          \n';
+      asciiArt += '                                 \\:|   |          \n';
+      asciiArt += '                                  \\|___|          \n';
+      asciiArt += '                                                  \n';
+
+      console.log(asciiArt);
+      console.log('Philippe Roy');
+      console.log('Web Developer');
+      console.log('e: philippe.j.roy@gmail.com');
+      console.log('l: au.linkedin.com/in/philippejroy');
+      console.log('g: github.com/PhilippeRoy');
+
+    })
+
+
   }
-
-
-  // Add this year
-  $(function(){
-    $('.thisYear').html(new Date().getFullYear());
-  })
-
-
-
 });
