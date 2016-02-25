@@ -18,7 +18,7 @@
 	<script src="/js/src/contollers.js"></script>
 	<base href="/">
 </head>
-<body class="portfolio" ng-app="portfolioWebsiteApp">
+<body class="projects" ng-app="portfolioWebsiteApp" ng-controller="TheBody">
 	<!-- nav -->
 	<div ng-include src="'partials/nav.html'"></div>
 
@@ -27,7 +27,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
-          <h1>Portfolio</h1>
+          <h1>Projects</h1>
         </div>
       </div>
     </div>
@@ -35,13 +35,13 @@
 
   <!-- Section: Featured -->
 	<div ng-controller="FeatureSliderCtrl">
-		<div ng-include src="'partials/featured-portfolio.html'" onload="initPortfolioSlider()" ></div>
+		<div ng-include src="'partials/featured-projects.html'" onload="initProjectsSlider()" ></div>
 	</div>
 
 	<!-- Section: Portfolio Itemss -->
-  <div id="portfolio-list" class="container-fluid background grey section" >
+  <div id="project-list" class="container-fluid background grey section" >
     <div class="row" ng-controller="PortfolioCtrl">
-      <div class="col-md-4 portfolio-list-item" ng-repeat="site in sites">
+      <div class="col-md-4 project-list-item" ng-repeat="site in sites">
         <h3>{{site.name}}</h3>
         <img class="img-responsive" ng-src="images/sites/{{site.name}}/{{site.images.devices}}" alt="...">
       </div>
@@ -54,6 +54,11 @@
 	<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
 	<script src="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js"></script>
-	<script src="/js/src/pr_scripts.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+
+	<div ng-include="'partials/empty.html'" onload="pageReady()"></div>
+
 </body>
 </html>

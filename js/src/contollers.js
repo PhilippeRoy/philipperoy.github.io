@@ -36,20 +36,20 @@ $scope.initPortfolioSlider = function() {
       dots: true,
       appendArrows: $('.portfolio .featured-slider-nav')
     });
-    $('.portfolio .featured-slider-nav .slick-prev').after($('#portfolio .slick-dots'));
+    $('.portfolio .featured-slider-nav .slick-prev').after($('.portfolio .slick-dots'));
   }
 }
 
 $scope.initProjectsSlider = function() {
 
-  if ($('#projects .featured-slider').length > 0){
+  if ($('.projects .featured-slider').length > 0){
     //Slick Slider
-    $('#projects .featured-slider').slick({
+    $('.projects .featured-slider').slick({
       autoplay: true,
       dots: true,
       appendArrows: $('#projects .featured-slider-nav')
     });
-    $('#projects .featured-slider-nav .slick-prev').after($('#projects .slick-dots'));
+    $('.projects .featured-slider-nav .slick-prev').after($('.projects .slick-dots'));
   }
 
 }
@@ -161,6 +161,7 @@ portfolioWebsiteApp.controller('TheBody', function($scope, $document) {
       asciiArt += '                                                  \n';
 
       console.log(asciiArt);
+      
       console.log('Philippe Roy');
       console.log('Web Developer');
       console.log('e: philippe.j.roy@gmail.com');
