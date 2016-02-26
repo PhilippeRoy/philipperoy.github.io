@@ -32,7 +32,7 @@ $scope.initPortfolioSlider = function() {
   if ($('.portfolio .featured-slider').length > 0){
     //Slick Slider
     $('.portfolio .featured-slider').slick({
-      autoplay: true,
+      // autoplay: true,
       dots: true,
       appendArrows: $('.portfolio .featured-slider-nav')
     });
@@ -45,7 +45,7 @@ $scope.initProjectsSlider = function() {
   if ($('.projects .featured-slider').length > 0){
     //Slick Slider
     $('.projects .featured-slider').slick({
-      autoplay: true,
+      // autoplay: true,
       dots: true,
       appendArrows: $('#projects .featured-slider-nav')
     });
@@ -109,27 +109,62 @@ portfolioWebsiteApp.controller('TheBody', function($scope, $document) {
 
     }
 
-    if(document.querySelectorAll('#myself').length){
 
-      var navheight = function(){return document.querySelector('.navbar').clientHeight / window.innerHeight; };
+    $(function(){
+      if(document.querySelectorAll('#myself').length){
 
-      $(window).on('resize', function(){
-        sceneNavbar.triggerHook(navheight());
+        var navheight = function(){return document.querySelector('.navbar').clientHeight / window.innerHeight; };
+
+        $(window).on('resize', function(){
+          sceneNavbar.triggerHook(navheight());
+        })
+
+        // create a scene
+        var sceneNavbar = new ScrollMagic.Scene({triggerElement: "#myself", triggerHook: navheight(), offset: -50 })
+            // .addIndicators({name: 'Scene Navbar'})
+            .on("enter leave", function (e) {
+  						if(e.type == "enter"){
+                $('.navbar, .navbar-toggle').addClass('visible');
+                TweenMax.to('.navbar', 1, {opacity: 1})
+                TweenMax.to('.navbar-toggle .icon-bar', 0.5, {backgroundColor: '#000000'})
+              } else {
+                $('.navbar-collapse, .navbar').removeClass('open');
+                $('.navbar, .navbar-toggle').removeClass('visible');
+                TweenMax.to('.navbar', 1, {opacity: 0})
+                TweenMax.to('.navbar-toggle .icon-bar', 0.5, {backgroundColor: '#FFFFFF'})
+              }
+  					})
+            .addTo(controller); // assign the scene to the controller
+
+        var circleHeight = document.querySelector('.circle').offsetHeight
+
+        new ScrollMagic.Scene({triggerElement: "#profile", triggerHook: 0.8 })
+            // .addIndicators({name: 'Scene Skills'})
+            .setTween(TweenMax.staggerTo('.circle', 1,  {top: 0 }, 0.3))
+            .addTo(controller); // assign the scene to the controller
+      }
+
+      $('.navbar-toggle').on('click', function(){
+        if(!$(this).hasClass('open')){
+          $('.navbar-toggle, .navbar-collapse, .navbar').addClass('open')
+          TweenMax.to('.navbar', 1, {opacity: 1})
+          TweenMax.to('.navbar-toggle .icon-bar', 0.5, {backgroundColor: '#000000'})
+        } else {
+          $(this).removeClass('open');
+          $('.navbar-toggle, .navbar-collapse, .navbar').removeClass('open')
+          if ($('.navbar').hasClass('visible')){
+            TweenMax.to('.navbar', 1, {opacity: 1})
+            TweenMax.to('.navbar-toggle .icon-bar', 0.5, {backgroundColor: '#000000'})
+          } else {
+            TweenMax.to('.navbar', 1, {opacity: 0})
+            TweenMax.to('.navbar-toggle .icon-bar', 0.5, {backgroundColor: '#FFFFFF'})
+          }
+        }
+
+
+
       })
-
-      // create a scene
-      var sceneNavbar = new ScrollMagic.Scene({triggerElement: "#myself", triggerHook: navheight(), offset: -50 })
-          // .addIndicators({name: 'Scene Navbar'})
-          .setTween(TweenMax.fromTo('.navbar', 1,  {opacity: 0 }, {opacity: 1}))
-          .addTo(controller); // assign the scene to the controller
-
-      var circleHeight = document.querySelector('.circle').offsetHeight
-
-      new ScrollMagic.Scene({triggerElement: "#profile", triggerHook: 0.8 })
-          // .addIndicators({name: 'Scene Skills'})
-          .setTween(TweenMax.staggerTo('.circle', 1,  {top: 0 }, 0.3))
-          .addTo(controller); // assign the scene to the controller
-    }
+    })
 
 
     // Add this year
@@ -161,7 +196,7 @@ portfolioWebsiteApp.controller('TheBody', function($scope, $document) {
       asciiArt += '                                                  \n';
 
       console.log(asciiArt);
-      
+
       console.log('Philippe Roy');
       console.log('Web Developer');
       console.log('e: philippe.j.roy@gmail.com');

@@ -1,42 +1,44 @@
-<nav class="navbar navbar-default" role="navigation"  id="primary-nav">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/#intro" du-smooth-scroll offset="50" du-scrollspy="intro" target="_self">
-        <img class="img-responsive logo-small" src="/images/logo.png" alt="..."> Philippe Roy
-      </a>
+<nav class="" role="navigation"  id="primary-nav">
+  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" >
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <div class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/#intro" du-smooth-scroll offset="50" du-scrollspy="intro" target="_self">
+          <img class="img-responsive logo-small" src="/images/logo.png" alt="..."> Philippe Roy
+        </a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" >
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#myself" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" du-smooth-scroll offset="50" du-scrollspy="myself" target="_self">myself <i class="fa fa-angle-down hidden-xs hidden-sm"></i></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#skills" du-smooth-scroll offset="50" target="_self">skills</a></li>
+              <li><a href="#work" du-smooth-scroll offset="50" target="_self">experience</a></li>
+              <li><a href="#education" du-smooth-scroll offset="50" target="_self">education</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#portfolio" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" du-smooth-scroll offset="50" du-scrollspy="portfolio" target="_self">portfolio <i class="fa fa-angle-down hidden-xs hidden-sm"></i></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="/portfolio" target="_self">some more stuff</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#projects" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" du-smooth-scroll offset="50" du-scrollspy="projects" target="_self">projects <i class="fa fa-angle-down hidden-xs hidden-sm"></i></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#toolbelt" du-smooth-scroll offset="50" du-scrollspy="toolbelt">toolbelt</a></li>
+              <li><a href="/projects.html" target="_self">playground</a></li>
+            </ul>
+          </li>
+          <li><a href="/#contact" du-smooth-scroll offset="50">contact</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
     </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="#myself" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" du-smooth-scroll offset="50" du-scrollspy="myself" target="_self">myself <i class="fa fa-angle-down hidden-xs hidden-sm"></i></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#skills" du-smooth-scroll offset="50" target="_self">skills</a></li>
-            <li><a href="#work" du-smooth-scroll offset="50" target="_self">experience</a></li>
-            <li><a href="#education" du-smooth-scroll offset="50" target="_self">education</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#portfolio" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" du-smooth-scroll offset="50" du-scrollspy="portfolio" target="_self">portfolio <i class="fa fa-angle-down hidden-xs hidden-sm"></i></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="/portfolio" target="_self">some more stuff</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#projects" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" du-smooth-scroll offset="50" du-scrollspy="projects" target="_self">projects <i class="fa fa-angle-down hidden-xs hidden-sm"></i></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#toolbelt" du-smooth-scroll offset="50" du-scrollspy="toolbelt">toolbelt</a></li>
-            <li><a href="/projects.html" target="_self">playground</a></li>
-          </ul>
-        </li>
-        <li><a href="/#contact" du-smooth-scroll offset="50">contact</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container -->
+  </div>
 </nav>
