@@ -145,7 +145,7 @@ nav { z-index: 1; width: 100%; }
 nav .navbar-default { width: 100%; }
 
 /* Navbar */
-.navbar { background: transparent; border: none; margin-bottom: 0px; opacity: 0; z-index: 2; display: block; top: 0;}
+.navbar { background: transparent; border: none; margin-bottom: 0px; z-index: 2; display: block; top: 0;}
 /*.navbar.visible { opacity: 1 !important; }*/
 .navbar .navbar-brand { color: #000000; font-weight: 100; font-size: 25px; }
 .navbar .nav li.active { background: #e7e7e7; }
@@ -217,7 +217,7 @@ nav .navbar-default { width: 100%; }
   background: linear-gradient(to bottom,  #FFFFFF 0%,#FAF7F5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#FAF7F5',GradientType=0 ); /* IE6-9 */
 }
-.home .navbar { position: fixed; }
+.home .navbar { position: fixed; opacity: 0; }
 .home .moreThings { padding-bottom: 50px; }
 
 
@@ -295,7 +295,7 @@ nav .navbar-default { width: 100%; }
 #contact .fa { display: block; }
 #contact h3 { transform: scale(1); -webkit-transition: transform 1s; transition: transform 1s; font-size: 20px; }
 #contact h3:hover { transform: scale(1.2); }
-#contact hr { width: 25%; }
+#contact hr { width: 50px; }
 
 /* Section: Sitemap */
 #siteMap { text-align: left; padding-bottom: 20px; }
@@ -401,6 +401,8 @@ nav .navbar-default { width: 100%; }
   .navbar { background-color: #FAF7F5; }
   .navbar-nav { float: right; }
   .navbar-collapse { float: right; }
+  .nav>li { position: relative; width: auto; }
+
 
 
   /* Section: Intro */

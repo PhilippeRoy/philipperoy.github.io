@@ -41,7 +41,7 @@
 	<!-- Section: Portfolio Itemss -->
   <div id="portfolio-list" class="container-fluid background grey section" >
     <div class="row" ng-controller="PortfolioCtrl">
-      <div class="col-md-4 portfolio-list-item" ng-repeat="site in sites">
+      <div class="col-sm-6 col-md-4 portfolio-list-item" ng-repeat="site in sites">
         <h3>{{site.name}}</h3>
         <img class="img-responsive" ng-src="images/sites/{{site.name}}/{{site.images.devices}}" alt="...">
       </div>
