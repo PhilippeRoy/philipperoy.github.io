@@ -13,6 +13,7 @@ hr { margin-bottom: 20px; }
 .red { color: #FF6961; }
 
 /* Layout */
+body { margin-top: 50px; }
 .section { padding-bottom: 40px; }
 
 /* Red Sections */
@@ -145,7 +146,7 @@ nav { z-index: 1; width: 100%; }
 nav .navbar-default { width: 100%; }
 
 /* Navbar */
-.navbar { background: transparent; border: none; margin-bottom: 0px; z-index: 2; display: block; top: 0;}
+.navbar { background: transparent; border: none; margin-bottom: 0px; z-index: 2; display: block; top: 0; position: fixed;}
 /*.navbar.visible { opacity: 1 !important; }*/
 .navbar .navbar-brand { color: #000000; font-weight: 100; font-size: 25px; }
 .navbar .nav li.active { background: #e7e7e7; }
@@ -164,8 +165,7 @@ nav .navbar-default { width: 100%; }
 .navbar-header { background-color: #FAF7F5; position: relative; z-index: 10;}
 
 .navbar-toggle { position: fixed; right: 0; top: 0; z-index: 3; margin-right: 10px; }
-.navbar-toggle .icon-bar { position: relative; background-color: #FFFFFF; -webkit-transition: background 0.5; transition: background 0.5; }
-.navbar-toggle.visible .icon-bar{ background-color: #000000;}
+.navbar-toggle .icon-bar{ position: relative; background-color: #000000; -webkit-transition: background 0.5; transition: background 0.5; }
 .navbar-toggle .icon-bar:nth-child(2) { top: 0px; -webkit-transition: transform 0.5s, top 0.5s ; transition: transform 0.5s, top 0.5s; }
 .navbar-toggle .icon-bar:nth-child(3) { opacity:1; -webkit-transition: opacity 0.5s; transition: opacity 0.5s;}
 .navbar-toggle .icon-bar:nth-child(4) { bottom: 0px; -webkit-transition: transform 0.5s, bottom 0.5s; transition: transform 0.5s, bottom 0.5s; }
@@ -198,6 +198,7 @@ nav .navbar-default { width: 100%; }
 
 /* Home Page */
 
+body.home { margin-top: 0; }
 .home #portfolio,
 .home #projects {top: 0;}
 .home #portfolio .featured-slider,
@@ -217,8 +218,11 @@ nav .navbar-default { width: 100%; }
   background: linear-gradient(to bottom,  #FFFFFF 0%,#FAF7F5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#FAF7F5',GradientType=0 ); /* IE6-9 */
 }
-.home .navbar { position: fixed; opacity: 0; }
+.home .navbar { opacity: 0; }
 .home .moreThings { padding-bottom: 50px; }
+
+.home .navbar-toggle .icon-bar { background-color: #FFFFFF; }
+.home .navbar-toggle.visible .icon-bar{ background-color: #000000;}
 
 
 
@@ -247,7 +251,7 @@ nav .navbar-default { width: 100%; }
 #myself .profile-box .summary { background: #FFFFFF;  margin-bottom: 40px; display: table; margin-left: 0; padding-left: 0; list-style: none; }
 #myself .profile-box .summary li { display: table-row; }
 #myself .profile-box .summary li:before { content: '\2022';/* For a round bullet */ color: #FF6961; font-size: 26px; line-height: 14px; display: table-cell; padding-right: 0.4em; position: relative; top: 5px; }
-#myself .profile-box .summary span.black { color: #000000; }
+#myself .bio-container { padding: 0; }
 .bio { margin-top: 30px; text-align: justify; }
 
 /* Section: Portfolio */

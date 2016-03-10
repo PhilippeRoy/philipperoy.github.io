@@ -34,6 +34,9 @@ portfolioWebsiteApp.controller('FeatureSliderCtrl', ['$scope', function($scope) 
         dots: true,
         appendArrows: $('.portfolio .featured-slider-nav')
       });
+      if ($(document.body).hasClass('portfolio')){
+        $('.portfolio .featured-slider').slick('slickRemove', false );
+      }
       $('.portfolio .featured-slider-nav .slick-prev').after($('.portfolio .slick-dots'));
     }
   }
@@ -102,8 +105,12 @@ portfolioWebsiteApp.controller('TheBody', function($scope, $document) {
             da = document.querySelector('body button.down-arrow');
 
             tl.delay(1);
-            tl.staggerFrom([b2,b1,b3], 0.75, {y:20, opacity: 0}, 0.5);
-            tl.from(da, 0.5, {width: 0})
+            if(screen.width >= 768){
+              tl.staggerFrom([b2,b1,b3], 0.75, {y:20, opacity: 0}, 0.5);
+              tl.from(da, 0.5, {width: 0})
+            } else {
+              tl.from(da, 0.5, {width: 0})
+            }
 
           // Down Arrow animation
           new ScrollMagic.Scene({triggerElement: "#myself", triggerHook: 1, duration: '100%', offset: '2px'  })
@@ -150,7 +157,7 @@ portfolioWebsiteApp.controller('TheBody', function($scope, $document) {
                 .addTo(controller); // assign the scene to the controller
           } else {
             $('.circle').each(function(){
-              console.log($(this).context);
+              // console.log($(this).context);
               new ScrollMagic.Scene({triggerElement: $(this).context, triggerHook: 0.8 })
                   // .addIndicators({name: 'Scene circle'})
                   .setTween(TweenMax.to($(this), 1,  {top: 0 }, 0.3))
@@ -164,11 +171,15 @@ portfolioWebsiteApp.controller('TheBody', function($scope, $document) {
         var l = $('.navbar-nav > li').length - 1;
         $('.navbar-nav > li').each(function(i){$(this).css('z-index', l - i)})
 
+        var isHome = $(document.body).hasClass('home');
+
         $('.navbar-toggle').on('click', function(){
           if(!$(this).hasClass('open')){
-            $('.navbar-toggle, .navbar-collapse, .navbar').addClass('open')
-            TweenMax.to('.navbar', 1, {opacity: 1})
-            TweenMax.to('.navbar-toggle .icon-bar', 0.5, {backgroundColor: '#000000'})
+            $('.navbar-toggle, .navbar-collapse, .navbar').addClass('open');
+            if(isHome){
+              TweenMax.to('.navbar', 1, {opacity: 1})
+              TweenMax.to('.navbar-toggle .icon-bar', 0.5, {backgroundColor: '#000000'})
+            }
             var sum = $('.navbar-header').height(), prevSum = 0;
             TweenMax.staggerTo(".navbar-nav > li", 0.5, {
               ease: Expo.easeOut,
@@ -182,13 +193,15 @@ portfolioWebsiteApp.controller('TheBody', function($scope, $document) {
             }, 0.05);
           } else {
             $(this).removeClass('open');
-            $('.navbar-toggle, .navbar-collapse, .navbar').removeClass('open')
-            if ($('.navbar').hasClass('visible')){
-              TweenMax.to('.navbar', 1, {opacity: 1})
-              TweenMax.to('.navbar-toggle .icon-bar', 0.5, {backgroundColor: '#000000'})
-            } else {
-              TweenMax.to('.navbar', 1, {opacity: 0})
-              TweenMax.to('.navbar-toggle .icon-bar', 0.5, {backgroundColor: '#FFFFFF'})
+            $('.navbar-toggle, .navbar-collapse, .navbar').removeClass('open');
+            if(isHome){
+              if ($('.navbar').hasClass('visible')){
+                TweenMax.to('.navbar', 1, {opacity: 1})
+                TweenMax.to('.navbar-toggle .icon-bar', 0.5, {backgroundColor: '#000000'})
+              } else {
+                TweenMax.to('.navbar', 1, {opacity: 0})
+                TweenMax.to('.navbar-toggle .icon-bar', 0.5, {backgroundColor: '#FFFFFF'})
+              }
             }
             TweenMax.staggerTo(".navbar-nav > li", 0.25, {
              ease: Expo.easeOut,
