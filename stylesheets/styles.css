@@ -107,7 +107,7 @@ button.red.gradient,
 /*.slick-track { height: 400px; overflow: hidden; }*/
 .slick-slide img { position: relative; top: 0px;  -webkit-transitions: top 0.5s; transition: top 0.5s; }
 .slick-slide img:hover { top: -10px; }
-.slick-slide h2 { margin-top: 0; }
+.slick-slide h2 { margin-top: 0; font-size: 22px; }
 
 
 /* Utilities */
